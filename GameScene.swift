@@ -52,6 +52,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         static let All       : UInt32 = UInt32.max
         static let Monster   : UInt32 = 0b1       // 1
         static let Projectile: UInt32 = 0b10      // 2
+        static let target2: UInt32 = 0b10      // 2
     }
     
     
@@ -248,6 +249,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if ((firstBody.categoryBitMask & PhysicsCategory.Monster != 0) &&
             (secondBody.categoryBitMask & PhysicsCategory.Projectile != 0)) {
             projectileDidCollideWithMonster(firstBody.node as! SKSpriteNode, monster: secondBody.node as! SKSpriteNode)
+            
         }
         
     }
