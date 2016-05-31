@@ -229,6 +229,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         print("Hit")
         projectile.removeFromParent()
         monster.removeFromParent()
+    
+
+        func projectileDidCollideWithTarget2(projectile:SKSpriteNode, target2:SKSpriteNode) {
+        print("Hit")
+        projectile.removeFromParent()
+    
+        }
     }
     
     // implement the contact delegate method. Add the following new method to the file:
@@ -249,7 +256,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if ((firstBody.categoryBitMask & PhysicsCategory.Monster != 0) &&
             (secondBody.categoryBitMask & PhysicsCategory.Projectile != 0)) {
             projectileDidCollideWithMonster(firstBody.node as! SKSpriteNode, monster: secondBody.node as! SKSpriteNode)
-            
+                    
         }
         
     }
